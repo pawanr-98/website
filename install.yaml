@@ -1,0 +1,13 @@
+---
+ - name: Installation 
+   become: true 
+   hosts: localhost
+   tasks: 
+    - name: Run Master.sh 
+      script: master.sh 
+ - name: Installation in slave
+   hosts: all
+   become: true
+   tasks: 
+    - name: Run Slave.sh 
+      script: slave.sh 
